@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 const userController = {
   registerUser: async (req: Request, res: Response): Promise<any> => {
     const { name, email, password, phone } = req.body;
-
+    console.log(req.body);
     try {
       // Check if user already exists
       const existingUser = await prisma.user.findUnique({
